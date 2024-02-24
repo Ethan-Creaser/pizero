@@ -13,15 +13,15 @@ print("PIGPIO Version ", pi.get_pigpio_version())
 # Function to set the servo angle
 def set_servo_angle(angle):
     # Convert the angle to the pulse width
-    pulse_width = int(angle)
+    pulse_width = int(angle)/180* 1500
     # Set the servo pulse width
     pi.set_servo_pulsewidth(SERVO_PIN, pulse_width)
 
 try:
-    angle = 500
-    set_servo_angle(1500)
-    for i in range(5):
-        angle += 300
+    angle = 0
+    set_servo_angle(180)
+    for i in range(4):
+        angle += 90
         time.sleep(2)
         set_servo_angle(angle)
         print(angle)
