@@ -22,6 +22,8 @@ try:
     angle = 0
     #set_servo_angle(180)
     pi.set_servo_pulsewidth(SERVO_PIN, 2400)
+    time.sleep(2)
+    pi.set_servo_pulsewidth(SERVO_PIN, 1500)
     for i in range(4):
         angle += 45
         time.sleep(2)
