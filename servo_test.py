@@ -23,6 +23,7 @@ try:
         angle += 100
         time.sleep(2)
         print(angle)
+    set_servo_angle(0)
 
 except KeyboardInterrupt:
     # Turn off the servo on Ctrl+C
