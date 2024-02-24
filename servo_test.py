@@ -1,17 +1,33 @@
 import pigpio
 import time
 
-servo = 13
+SERVO_PIN = 13
 
-pwm = pigpio.pi()
-pwm.set_mode(servo, pigpio.OUTPUT)
-print("Hardware revision ",pwm.get_hardware_revision())
-print("PIGPIO Version ",pwm.get_pigpio_version())
+pi = pigpio.pi()
+pi.set_mode(servo, pigpio.OUTPUT)
+print("Hardware revision ", pi.get_hardware_revision())
+print("PIGPIO Version ", pi.get_pigpio_version())
 
-pwm.set_PWM_frequency(servo, 50)
-pwm.set_PWM_range(servo, 20000)  # 1,000,000 / 50 = 20,000us for 100% duty cycle
+# Function to set the servo angle
+def set_servo_angle(angle):
+    # Convert the angle to the pulse width
+    pulse_width = int(angle * 2000 / 180) + 500
+    # Set the servo pulse width
+    pi.set_servo_pulsewidth(SERVO_PIN, pulse_width)
 
-pwm.hardware_PWM(servo, 50, 2000)
-time.sleep(10)
-
-pwm.set_servo_pulsewidth(servo, 0)
+try:
+    while True:
+        # Set the servo to 0 degrees
+        set_servo_angle(0)
+        time.sleep(1)  # Wait 1 second
+        # Set the servo to 90 degrees
+        set_servo_angle(90)
+        time.sleep(1)  # Wait 1 second
+        # Set the servo to 180 degrees
+        set_servo_angle(180)
+        time.sleep(1)  # Wait 1 second
+except KeyboardInterrupt:
+    # Turn off the servo on Ctrl+C
+    pi.set_servo_pulsewidth(SERVO_PIN, 0)
+    # Disconnect from the pigpio daemon
+    pi.stop()
