@@ -28,7 +28,7 @@ try:
     pi.set_servo_pulsewidth(SERVO_PIN, 1000)
     time.sleep(2)
     pi.set_servo_pulsewidth(SERVO_PIN, 500)
-
+    break
     for i in range(4):
         angle += 45
         time.sleep(2)
