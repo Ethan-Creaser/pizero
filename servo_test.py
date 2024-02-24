@@ -20,7 +20,7 @@ def set_servo_angle(angle):
 try:
     angle = 500
     for i in range(5):
-        angle += 10
+        angle += 100
         time.sleep(2)
         print(angle)
 
