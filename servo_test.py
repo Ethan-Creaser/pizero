@@ -2,7 +2,7 @@ import pigpio
 from gpiozero import LED
 import time
 
-SERVO_PIN = 13
+SERVO_PIN = 12
 led = LED(26)
 
 pi = pigpio.pi()
