@@ -4,7 +4,6 @@ import time
 SERVO_PIN = 13
 
 pi = pigpio.pi()
-pi.set_mode(servo, pigpio.OUTPUT)
 print("Hardware revision ", pi.get_hardware_revision())
 print("PIGPIO Version ", pi.get_pigpio_version())
 
