@@ -22,11 +22,14 @@ try:
     angle = 0
     set_servo_angle(180)
     for i in range(4):
-        angle += 45
+        angle += 90
         time.sleep(2)
         set_servo_angle(angle)
         print(angle)
+
     set_servo_angle(0)
+    time.sleep
+    pi.set_servo_pulsewidth(SERVO_PIN, 0)
 
 except KeyboardInterrupt:
     # Turn off the servo on Ctrl+C
