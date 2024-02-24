@@ -20,7 +20,7 @@ try:
         servo.mid()
         time.sleep(1)  # Wait 1 second
         
-except KeyboardInterrupt()
+except KeyboardInterrupt();
     # Turn off the servo on Ctrl+C
     servo.set_servo_pulsewidth(SERVO_PIN, 0)
     # Disconnect from the pigpio daemon
