@@ -22,6 +22,7 @@ try:
     for i in range(5):
         angle += 10
         time.sleep(2)
+        print(angle)
 
 except KeyboardInterrupt:
     # Turn off the servo on Ctrl+C
