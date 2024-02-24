@@ -28,6 +28,7 @@ try:
     pi.set_servo_pulsewidth(SERVO_PIN, 1000)
     time.sleep(2)
     pi.set_servo_pulsewidth(SERVO_PIN, 500)
+    time.sleep(2)
     pi.set_servo_pulsewidth(SERVO_PIN,0)
     exit()
     for i in range(4):
