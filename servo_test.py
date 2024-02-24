@@ -21,11 +21,7 @@ def set_servo_angle(angle):
 try:
     angle = 0
     #set_servo_angle(180)
-    pi.set_servo_pulsewidth(SERVO_PIN, 3000)
-    time.sleep(2)
-    pi.set_servo_pulsewidth(SERVO_PIN, 1500)
-    time.sleep(2)
-    pi.set_servo_pulsewidth(SERVO_PIN, 1000)
+    pi.set_servo_pulsewidth(SERVO_PIN, 600)
     time.sleep(2)
     pi.set_servo_pulsewidth(SERVO_PIN, 500)
     time.sleep(2)
