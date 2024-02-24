@@ -13,7 +13,7 @@ print("PIGPIO Version ", pi.get_pigpio_version())
 # Function to set the servo angle
 def set_servo_angle(angle):
     # Convert the angle to the pulse width
-    pulse_width = int(angle * 2000 / 180) + 500
+    pulse_width = int(angle/ 180) *2000 + 400
     # Set the servo pulse width
     pi.set_servo_pulsewidth(SERVO_PIN, pulse_width)
 
@@ -31,6 +31,7 @@ try:
         set_servo_angle(180)
         time.sleep(1)  # Wait 1 second
         led.toggle()
+        break
 
 except KeyboardInterrupt:
     # Turn off the servo on Ctrl+C
