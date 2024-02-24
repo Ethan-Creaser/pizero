@@ -2,7 +2,7 @@ import pigpio
 import time
 
 # GPIO pin where the servo is connected
-SERVO_PIN = 18
+SERVO_PIN = 13
 
 # Create an instance of the pigpio library
 pi = pigpio.pi()
