@@ -22,6 +22,7 @@ try:
     for i in range(5):
         angle += 100
         time.sleep(2)
+        set_servo_angle(angle)
         print(angle)
     set_servo_angle(0)
 
