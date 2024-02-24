@@ -1,28 +1,27 @@
-from gpiozero import pin
+from gpiozero import SERVO
 
-servo = pin(13)
-servo.set_servo_pulsewidth(SERVO_PIN, pulse_width)
+servo = SERVO(13)
 
 # Function to set the servo angle
 def set_servo_angle(angle):
     # Convert the angle to the pulse width
     pulse_width = int(angle * 2000 / 180) + 500
     # Set the servo pulse width
-    pi.set_servo_pulsewidth(SERVO_PIN, pulse_width)
 
 try:
     while True:
         # Set the servo to 0 degrees
-        set_servo_angle(0)
+        servo.min()
         time.sleep(1)  # Wait 1 second
         # Set the servo to 90 degrees
-        set_servo_angle(90)
+        servo.max()
         time.sleep(1)  # Wait 1 second
         # Set the servo to 180 degrees
-        set_servo_angle(180)
+        servo.mid()
         time.sleep(1)  # Wait 1 second
-except KeyboardInterrupt:
+        
+except KeyboardInterrupt()
     # Turn off the servo on Ctrl+C
-    pi.set_servo_pulsewidth(SERVO_PIN, 0)
+    servo.set_servo_pulsewidth(SERVO_PIN, 0)
     # Disconnect from the pigpio daemon
     pi.stop()
