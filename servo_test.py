@@ -1,6 +1,6 @@
-from gpiozero import SERVO
+from gpiozero import Servo
 
-servo = SERVO(13)
+servo = Servo(13)
 
 # Function to set the servo angle
 def set_servo_angle(angle):
