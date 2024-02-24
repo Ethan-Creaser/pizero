@@ -10,7 +10,7 @@ def set_servo_angle(angle):
     # Set the servo pulse width
 
  while True:
-        # Set the servo to 0 degrees
+    # Set the servo to 0 degrees
     servo.min()
     time.sleep(1)  # Wait 1 second
     # Set the servo to 90 degrees
