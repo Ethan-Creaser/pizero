@@ -1,5 +1,5 @@
 from gpiozero import Servo
-import timw
+import time
 
 servo = Servo(13)
 
