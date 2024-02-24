@@ -18,7 +18,7 @@ def set_servo_angle(angle):
     pi.set_servo_pulsewidth(SERVO_PIN, pulse_width)
 
 try:
-    angle = 0
+    angle = -180
     set_servo_angle(180)
     for i in range(4):
         angle += 90
